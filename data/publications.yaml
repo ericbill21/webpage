@@ -1,0 +1,60 @@
+- title: "Performance Analysis of Different Reward Functions in Reinforcement Learning for the Scheduling of Modular Automotive Production Systems"
+  authors: "Jan Markus Gelfgren, Eric Tillmann Bill, Tim Luther, Simon Hagemann, Sigrid Wenzel"
+  venue: "Conference on Intelligent Computation in Manufacturing Engineering"
+  details: ""
+  year: 2023
+  selected: false
+  links:
+    pdf: "https://www.sciencedirect.com/science/article/pii/S2212827124008709"
+    bibtex: "#"
+    webpage: "https://ericbill.me/projects/modular-production"
+    doi: "https://doi.org/10.1016/j.procir.2024.08.299"
+
+- title: "Optimal Control Meets Flow Matching: A Principled Route to Multi-Subject Fidelity"
+  authors: "Eric Tillmann Bill, Enis Simsar, Thomas Hofmann"
+  venue: "Preprint ArXiv"
+  details: ""
+  year: 2025
+  selected: true
+  links:
+    preprint: "https://arxiv.org/abs/2510.02315"
+    bibtex: "#"
+    webpage: "https://ericbill21.github.io/FOCUS/"
+    code: "https://github.com/ericbill21/FOCUS"
+
+- title: "Exploring Magnitude Preservation and Rotation Modulation in Diffusion Transformers"
+  authors: "Eric Tillmann Bill, Cristian Perez Jensen, Sotiris Anagnostidis, Dimitri von Rütte"
+  venue: "NeurIPS 2025, Optimization for Machine Learning Workshop"
+  details: ""
+  year: 2025
+  selected: true
+  links:
+    preprint: "https://arxiv.org/abs/2505.19122"
+    pdf: "https://openreview.net/forum?id=j5NB2cpxIQ"
+    bibtex: "#"
+    webpage: "https://ericbill21.github.io/map-dit"
+    code: "https://github.com/ericbill21/map-dit"
+
+- title: "JEDI: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models"
+  authors: "Eric Tillmann Bill, Enis Simsar, Thomas Hofmann"
+  venue: "ICML 2025, Putting Updates to the Test Workshop"
+  details: ""
+  year: 2025
+  selected: true
+  links:
+    preprint: "https://arxiv.org/abs/2505.19166"
+    pdf: "https://openreview.net/pdf?id=HVQ3wL2jPI"
+    bibtex: "#"
+    webpage: "https://ericbill21.github.io/JEDI/"
+    code: "https://github.com/ericbill21/jedi"
+
+- title: "A Theoretical and Empirical Investigation into the Equivalence of Graph Neural Networks and the Weisfeiler-Leman Algorithm"
+  authors: "Eric Tillmann Bill"
+  venue: "Bachelor's Thesis, RWTH Aachen University"
+  details: ""
+  year: 2023
+  selected: false
+  links:
+    pdf: "https://ericbill21.github.io/Thesis_Eric_Bill.pdf"
+    webpage: "https://ericbill21.github.io/BachelorThesis"
+    code: "https://github.com/ericbill21/BachelorThesis"

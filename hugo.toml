@@ -1,4 +1,5 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://ericbill.me/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Eric Tillmann Bill'
 theme = 'barks'
+copyright = '© 2025 by Eric Tillmann Bill. <a href="/imprint/">Imprint</a>.'

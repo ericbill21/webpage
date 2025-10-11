@@ -1,0 +1,55 @@
+{{ $selected := where site.Data.publications "selected" true }}
+{{ if gt (len $selected) 0 }}
+  {{ $authorName := default "Eric Tillmann Bill" .Site.Params.head.author }}
+  {{ if not (.Page.Scratch.Get "pub-styles") }}
+    {{ .Page.Scratch.Set "pub-styles" true }}
+    <style>
+      .pubs { display: flex; flex-direction: column; gap: 2rem; }
+      .pubs-list { margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.5rem; }
+      .pub { padding: 1.1rem 1.25rem; border: 1px solid #eee; border-radius: 12px; background: #fff; box-shadow: 0 6px 16px rgba(0,0,0,0.04); text-align: left; line-height: 1.55; }
+      .pub-header { display: flex; flex-direction: column; gap: .55rem; }
+      .pub-title { font-size: 1.08rem; line-height: 1.4; margin: 0; }
+      .pub-title strong { font-weight: 600; }
+      .pub-authors { margin: 0; opacity: .9; }
+      .pub-venue { margin: 0; opacity: .75; font-style: italic; }
+      .pub-links { margin-top: .8rem; display: flex; flex-wrap: wrap; gap: .5rem; }
+      .pub-links .badge { padding: .2rem .6rem; border: 1px solid #ddd; border-radius: 999px; font-size: .85rem; text-decoration: none; }
+      .pub-links .badge:hover { border-color: #bbb; }
+      .pubs-year { text-align: left; margin: 0 0 .75rem; font-size: 1.2rem; }
+    </style>
+  {{ end }}
+
+  {{ $sorted := sort $selected "year" "desc" }}
+  <div class="pubs pubs-selected">
+    <div class="pubs-list">
+      {{ range $sorted }}
+        <article class="pub" role="article">
+          <div class="pub-header">
+            <div class="pub-title"><strong>{{ .title }}</strong></div>
+            {{ $authors := .authors }}
+            {{ if and $authorName $authors }}
+              {{ $authors = replace $authors $authorName (printf "<strong>%s</strong>" $authorName) }}
+            {{ end }}
+            <div class="pub-authors">{{ $authors | safeHTML }}</div>
+            <div class="pub-venue">
+              {{- .venue -}}{{ with .details }}, {{ . }}{{ end }}
+            </div>
+          </div>
+          {{ with .links }}
+            <div class="pub-links" role="group" aria-label="Publication links">
+              {{ with .preprint }}<a class="badge" href="{{ . }}">Preprint</a>{{ end }}
+              {{ with .pdf }}<a class="badge" href="{{ . }}">PDF</a>{{ end }}
+              {{ with .bibtex }}<a class="badge" href="{{ . }}">BibTeX</a>{{ end }}
+              {{ with .ads }}<a class="badge" href="{{ . }}">NASA/ADS</a>{{ end }}
+              {{ with .code }}<a class="badge" href="{{ . }}">Code</a>{{ end }}
+              {{ with .dataset }}<a class="badge" href="{{ . }}">Dataset</a>{{ end }}
+              {{ with .webpage }}<a class="badge" href="{{ . }}">Webpage</a>{{ end }}
+              {{ with .doi }}<a class="badge" href="{{ . }}">DOI</a>{{ end }}
+              {{ with .presentation }}<a class="badge" href="{{ . }}">Oral presentation</a>{{ end }}
+            </div>
+          {{ end }}
+        </article>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
