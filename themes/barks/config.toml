@@ -1,0 +1,67 @@
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.87.0"
+
+[params.head]
+    author = "Eric Tillmann Bill"
+    description = "I’m a Master’s student at ETH Zurich, working on generative image models. I started out on the theory side with Christopher Morris studying graph neural networks, then explored magnitude preservation techniques with Cristian Perez (NeurIPS 2026, OPT). More recently, I’ve focused on multi-subject generation for text-to-image models, publishing JEDI (ICML 2025, PUT) and developing its theoretical extension, FOCUS with Enis Simsar and Thomas Hofmann."
+    keywords = ["ML", "ETHZ", "AI", "Research", "Masters", "Student"]
+    custom_css = "/css/publications.css"
+
+[params.navigation]
+    show_navigation = true
+    cv_url = "https://ericbill21.github.io/CV_Eric_Tillmann_Bill.pdf"
+
+[params.footer]
+    show_footer = true
+
+[params.colors]
+    theme_color = "#333333"
+    background_color = "#fcfbf9"
+    text_color = "#333333"
+    link_color = "#386BCA"
+
+[params.social]
+    [params.social.email]
+        name = "E-Mail"
+        class = "fas fa-envelope"
+        url = "mailto:eric.billx21@gmail.com"
+        weight = 1
+    [params.social.github]
+        name = "GitHub"
+        class = "fab fa-github"
+        url = "https://github.com/ericbill21"
+        weight = 2
+    [params.social.google_scholar]
+        name = "Google Scholar"
+        class = "ai ai-google-scholar-square"
+        url = "https://scholar.google.com/citations?user=oLaB4tIAAAAJ"
+        weight = 3
+    [params.social.linkedin]
+        name = "Google Scholar"
+        class = "fab fa-linkedin"
+        url = "www.linkedin.com/in/ericbill21"
+        weight = 4
+
+[menu]
+
+  [[menu.main]]
+    name = "Home"
+    url  = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Publications"
+    url  = "/publications/"
+    weight = 2
+
+  [[menu.main]]
+    name = "CV"
+    url  = "/cv/"
+    weight = 3
+
+  [[menu.main]]
+    name = "About"
+    url  = "/about/"
+    weight = 4

@@ -1,0 +1,63 @@
+
+{{ define "main" }}
+  {{ $raw := .RawContent }}
+  {{ $scratch := newScratch }}
+  {{ $scratch.Set "parts" (slice) }}
+  {{ range (split $raw "\n\n") }}
+    {{ $part := trim . "\n\r\t " }}
+    {{ if ne $part "" }}
+      {{ $scratch.Add "parts" (slice $part) }}
+    {{ end }}
+  {{ end }}
+  {{ $parts := $scratch.Get "parts" }}
+  {{ $introCount := 2 }}
+  {{ if lt (len $parts) 2 }}
+    {{ $introCount = len $parts }}
+  {{ end }}
+  {{ $introParts := slice }}
+  {{ if gt $introCount 0 }}
+    {{ $introParts = first $introCount $parts }}
+  {{ end }}
+  {{ $greeting := "" }}
+  {{ $introBodyParts := slice }}
+  {{ if gt (len $introParts) 0 }}
+    {{ $greeting = markdownify (index $introParts 0) }}
+    {{ if gt (len $introParts) 1 }}
+      {{ $introBodyParts = after 1 $introParts }}
+    {{ end }}
+  {{ end }}
+  {{ $restParts := slice }}
+  {{ if gt (len $parts) $introCount }}
+    {{ $restParts = after $introCount $parts }}
+  {{ end }}
+  {{ $introHTML := "" }}
+  {{ if $greeting }}
+    {{ $introHTML = printf "<div class=\"landing-page-greeting\">%s</div>" $greeting }}
+  {{ end }}
+  {{ if gt (len $introBodyParts) 0 }}
+    {{ $introBodyHTML := markdownify (delimit $introBodyParts "\n\n") }}
+    {{ $introHTML = printf "%s<div class=\"landing-page-overview\">%s</div>" $introHTML $introBodyHTML }}
+  {{ end }}
+  {{ $restHTML := "" }}
+  {{ if gt (len $restParts) 0 }}
+    {{ $restHTML = markdownify (delimit $restParts "\n\n") }}
+  {{ end }}
+
+  <div class="landing-page-wrapper">
+    {{ if or $introHTML .Params.image }}
+      <div class="landing-page-hero">
+        {{ with $introHTML }}
+          <div class="landing-page-intro">{{ . | safeHTML }}</div>
+        {{ end }}
+        {{ with .Params.image }}
+          <div class="landing-page-image">
+            <img src="{{ . }}" alt="{{ $.Site.Params.header.title }}" width="221" height="331">
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
+    {{ with $restHTML }}
+      <div class="landing-page-content">{{ . | safeHTML }}</div>
+    {{ end }}
+  </div>
+{{ end }}
