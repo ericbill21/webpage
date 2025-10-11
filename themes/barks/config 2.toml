@@ -5,8 +5,9 @@
 
 [params.head]
     author = "Eric Tillmann Bill"
-    description = "I’m a Master’s student at ETH Zurich, working on generative image models. I started out on the theory side with Christopher Morris studying graph neural networks, then explored magnitude preservation techniques with Cristian Perez (NeurIPS 2026, OPT). More recently, I’ve focused on multi-subject generation for text-to-image models, publishing JEDI (ICML 2025, PUT) and developing its theoretical extension, FOCUS with Enis Simsar and Thomas Hofmann."
-    keywords = ["ML", "ETHZ", "AI", "Research", "Masters", "Student"]
+    description = "TODO"
+    keywords = ["ETH", "ETH Zurich", "Machine Learning", "ML", "AI", "Computer Science", "CS", "Masters", "Academia", "Research"]
+    custom_css = "/css/publications.css"
 
 [params.navigation]
     show_navigation = true
@@ -19,7 +20,8 @@
     theme_color = "#333333"
     background_color = "#fcfbf9"
     text_color = "#333333"
-    link_color = "#386BCA"
+    link_color = "#3669C8"
+
 
 [params.social]
     [params.social.email]
@@ -57,7 +59,7 @@
 
   [[menu.main]]
     name = "CV"
-    url  = "/cv/"
+    url  = "#"
     weight = 3
 
   [[menu.main]]
