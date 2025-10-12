@@ -37,7 +37,7 @@ footer li {
 }
 
 footer a {
-    color: $text-color;
+    color: $link-color;
     text-decoration: underline;
     text-decoration-style: dotted;
     text-underline-offset: 3px;
@@ -45,5 +45,4 @@ footer a {
 
 footer a:hover  {
     text-decoration-style: solid;
-    text-decoration-color: $link-color;
 }

@@ -6,8 +6,7 @@
   selected: false
   links:
     pdf: "https://www.sciencedirect.com/science/article/pii/S2212827124008709"
-    bibtex: "#"
-    webpage: "https://ericbill.me/projects/modular-production"
+    bibtex: "@article{GELFGREN202481,\n title = {Performance Analysis of Different Reward Functions in Reinforcement Learning for the Scheduling of Modular Automotive Production Systems},\n journal = {Procedia CIRP},\n volume = {126},\n pages = {81-86},\n year = {2024},\n note = {17th CIRP Conference on Intelligent Computation in Manufacturing Engineering (CIRP ICME ‘23)},\n issn = {2212-8271},\n doi = {https://doi.org/10.1016/j.procir.2024.08.299},\n url = {https://www.sciencedirect.com/science/article/pii/S2212827124008709},\n author = {Jan Markus Gelfgren and Eric Tillmann Bill and Tim Luther and Simon Hagemann and Sigrid Wenzel},\n keywords = {Reinforcement Learning, Reward Functions, Production Scheduling, Modular Production},\n abstract = {Conventional, linear production lines struggle with the new flexibility requirements of the automotive market. Modular production has the potential to radically improve the production flexibility. However, scheduling modular production systems is still an open research question. Reinforcement learning (RL) is a form of artificial intelligence that shows great potential in scheduling complex modular production systems. Nonetheless, the performance of RL agents heavily depends on their reward function. Designing an optimal reward function is highly complex. This paper addresses this research gap and systematically compares six different reward functions for a variety of different modular production scenarios. In addition, a new learning method using resets is proposed and its performance is compared with the standard learning approach. The results suggest that dense reward functions perform better than a sparse one. However, there are major case-to-case discrepancies. The proposed learning method outperforms the standard learning method by 7 % on average. Nonetheless, the performance difference between different scenarios is larger than with the standard approach.}\n }"
     doi: "https://doi.org/10.1016/j.procir.2024.08.299"
 
 - title: "Optimal Control Meets Flow Matching: A Principled Route to Multi-Subject Fidelity"
@@ -18,7 +17,7 @@
   selected: true
   links:
     preprint: "https://arxiv.org/abs/2510.02315"
-    bibtex: "#"
+    bibtex: "@misc{bill2025focus,\n       title={Optimal Control Meets Flow Matching: A Principled Route to Multi-Subject Fidelity}, \n       author={Eric Tillmann Bill and Enis Simsar and Thomas Hofmann},\n       year={2025},\n       eprint={2510.02315},\n       archivePrefix={arXiv},\n       primaryClass={cs.CV},\n       url={https://arxiv.org/abs/2510.02315}, \n }"
     webpage: "https://ericbill21.github.io/FOCUS/"
     code: "https://github.com/ericbill21/FOCUS"
 
@@ -31,8 +30,7 @@
   links:
     preprint: "https://arxiv.org/abs/2505.19122"
     pdf: "https://openreview.net/forum?id=j5NB2cpxIQ"
-    bibtex: "#"
-    webpage: "https://ericbill21.github.io/map-dit"
+    bibtex: "@inproceedings{bill2025exploring,\n\ttitle={Exploring Magnitude Preservation and Rotation Modulation in Diffusion Transformers},\n	author={Anonymous},\n	booktitle={OPT 2025: Optimization for Machine Learning},\n	year={2025},\n	url={https://openreview.net/forum?id=j5NB2cpxIQ}\n	}"
     code: "https://github.com/ericbill21/map-dit"
 
 - title: "JEDI: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models"
@@ -44,7 +42,7 @@
   links:
     preprint: "https://arxiv.org/abs/2505.19166"
     pdf: "https://openreview.net/pdf?id=HVQ3wL2jPI"
-    bibtex: "#"
+    bibtex: "@inproceedings{\n	 bill2025jedi,\n	 title={{JEDI}: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models},\n	 author={Eric Tillmann Bill and Enis Simsar and Thomas Hofmann},\n	 booktitle={Second Workshop on Test-Time Adaptation: Putting Updates to the Test! at ICML 2025},\n	 year={2025},\n	 url={https://openreview.net/forum?id=HVQ3wL2jPI}\n}"
     webpage: "https://ericbill21.github.io/JEDI/"
     code: "https://github.com/ericbill21/jedi"
 
@@ -56,5 +54,4 @@
   selected: false
   links:
     pdf: "https://ericbill21.github.io/Thesis_Eric_Bill.pdf"
-    webpage: "https://ericbill21.github.io/BachelorThesis"
     code: "https://github.com/ericbill21/BachelorThesis"

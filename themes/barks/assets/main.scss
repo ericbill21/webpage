@@ -8,7 +8,7 @@ main {
     color: $text-color;
 
     a {
-        color: $text-color;
+        color: $link-color;
         text-decoration: underline;
         text-decoration-style: dotted;
         text-underline-offset: 3px;
@@ -16,7 +16,6 @@ main {
 
     a:hover  {
         text-decoration-style: solid;
-        text-decoration-color: $link-color;
     }
 
 
@@ -40,11 +39,7 @@ main {
     }
 
     figcaption a {
-        @if (lightness($background-color) < 55%) { 
-            color: grayscale(darken(invert($background-color), 50%)) !important; 
-        } @else { 
-            color: grayscale(lighten(invert($background-color), 50%)) !important; 
-        }
+        color: $link-color !important;
     }
 
     figcaption h4 {

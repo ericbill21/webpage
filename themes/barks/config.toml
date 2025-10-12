@@ -38,13 +38,12 @@
         url = "https://scholar.google.com/citations?user=oLaB4tIAAAAJ"
         weight = 3
     [params.social.linkedin]
-        name = "Google Scholar"
+        name = "LinkedIn"
         class = "fab fa-linkedin"
-        url = "www.linkedin.com/in/ericbill21"
+        url = "https://linkedin.com/in/ericbill21"
         weight = 4
 
 [menu]
-
   [[menu.main]]
     name = "Home"
     url  = "/"

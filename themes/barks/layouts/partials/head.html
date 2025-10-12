@@ -48,7 +48,7 @@
     <!-- Generate CSS file from SCSS and include -->
     {{ $template := resources.Get "styles.scss" }}
     {{ $style := $template | resources.ExecuteAsTemplate "styles.scss" . | css.Sass (dict "outputStyle" "compressed") | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink | absURL }}">
+    <link rel="stylesheet" href="{{ $style.RelPermalink | relURL }}">
 
     <!-- Include custom CSS file -->
     {{ with .Site.Params.head.custom_css }}

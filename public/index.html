@@ -48,7 +48,7 @@
     
     
     
-    <link rel="stylesheet" href="http://localhost:1313/styles.add3dbb5dd1700cf05f750282ab48af26a3c3a930e4c46928a9b4808742038df.css">
+    <link rel="stylesheet" href="/styles.4b78d8196870d3ded669f9ae6b94744a59f256742faf1c06e5a5f974d458b099.css">
 
     
     
@@ -142,6 +142,16 @@
       
     
   
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
   
   
   
@@ -178,7 +188,7 @@
     
       <div class="landing-page-hero">
         
-          <div class="landing-page-intro"><div class="landing-page-greeting">Hi, I&rsquo;m Eric!👋</div><div class="landing-page-overview">I’m a Master’s student at ETH Zurich, working on generative image models. I started out on the theory side with <a href="https://chrsmrrs.github.io/">Christopher Morris</a> studying graph neural networks, then explored magnitude preservation techniques with <a href="https://github.com/cristianpjensen">Cristian Perez</a> (NeurIPS 2026, OPT). More recently, I’ve focused on multi-subject generation for text-to-image models, publishing JEDI (ICML 2025, PUT) and developing its theoretical extension, FOCUS with <a href="https://enis.dev/">Enis Simsar</a> and <a href="https://da.inf.ethz.ch/people/ThomasHofmann/">Thomas Hofmann</a>.</div></div>
+          <div class="landing-page-intro"><div class="landing-page-greeting">Hi, I’m Eric! 👋</div><div class="landing-page-overview">I’m a master’s student at ETH Zurich working on generative image models. I began at RWTH Aachen, where I wrote my bachelor’s thesis on graph neural networks with Christopher Morris. From there, I shifted into generative modeling at ETH Zurich, exploring magnitude-preservation methods for Diffusion Transformers with <a href="https://github.com/cristianpjensen">Cristian Perez</a> (NeurIPS’26 OPT). Recently, I’ve focused on multi-subject text-to-image: JEDI (ICML’25 PUT), followed by FOCUS, which casts multi-subject fidelity as stochastic optimal control and improves on JEDI, with <a href="https://enis.dev/">Enis Simsar</a> and <a href="https://da.inf.ethz.ch/people/ThomasHofmann/">Thomas Hofmann</a>.</div></div>
         
         
           <div class="landing-page-image">
@@ -188,7 +198,13 @@
       </div>
     
     
-      <div class="landing-page-content"><h2 id="selected-publications">Selected Publications</h2>
+      <div class="landing-page-content"><p>I’ve completed industry internships in Stuttgart and Singapore, and I’m now finishing my master’s thesis on vision-language models via discrete flow matching. I expect to graduate in April 2026.</p>
+<h2 id="news">News</h2>
+<ul>
+<li>Sep 2025, <em>Map-DiT</em> accepted to NeurIPS'25 <a href="https://opt-ml.org/">Workshop on Optimization for ML</a> 🧶</li>
+<li>Jul 2025, <em>JEDI</em> accepted to ICML’25 <a href="https://icml.cc/virtual/2025/workshop/39974">Workshop on Test-Time Adaptation</a> 🔬</li>
+</ul>
+<h2 id="selected-publications">Selected Publications</h2>
 
 
   
@@ -196,6 +212,8 @@
   <div class="pubs pubs-selected">
     <div class="pubs-list">
       
+        
+        
         <article class="pub" role="article">
           <div class="pub-header">
             <div class="pub-title"><strong>Optimal Control Meets Flow Matching: A Principled Route to Multi-Subject Fidelity</strong></div>
@@ -211,7 +229,9 @@
             <div class="pub-links" role="group" aria-label="Publication links">
               <a class="badge" href="https://arxiv.org/abs/2510.02315">Preprint</a>
               
-              <a class="badge" href="#">BibTeX</a>
+              
+                <button class="badge bibtex-trigger" type="button" data-target="bibtex-optimal-control-meets-flow-matching-a-principled-route-to-multi-subject-fidelity-0">BibTeX</button>
+              
               
               <a class="badge" href="https://github.com/ericbill21/FOCUS">Code</a>
               
@@ -220,8 +240,31 @@
               
             </div>
           
+          
+            
+            <div class="bibtex-modal" id="bibtex-optimal-control-meets-flow-matching-a-principled-route-to-multi-subject-fidelity-0" aria-hidden="true">
+              <div class="bibtex-dialog" role="dialog" aria-modal="true" aria-labelledby="bibtex-optimal-control-meets-flow-matching-a-principled-route-to-multi-subject-fidelity-0-title">
+                <div class="bibtex-header">
+                  <h3 id="bibtex-optimal-control-meets-flow-matching-a-principled-route-to-multi-subject-fidelity-0-title">BibTeX</h3>
+                  <button type="button" class="bibtex-close" aria-label="Close">&times;</button>
+                </div>
+                <pre><code>@misc{bill2025focus,
+       title={Optimal Control Meets Flow Matching: A Principled Route to Multi-Subject Fidelity}, 
+       author={Eric Tillmann Bill and Enis Simsar and Thomas Hofmann},
+       year={2025},
+       eprint={2510.02315},
+       archivePrefix={arXiv},
+       primaryClass={cs.CV},
+       url={https://arxiv.org/abs/2510.02315}, 
+ }</code></pre>
+                <button type="button" class="bibtex-copy" data-bibtex="@misc{bill2025focus,&amp;#10;       title={Optimal Control Meets Flow Matching: A Principled Route to Multi-Subject Fidelity}, &amp;#10;       author={Eric Tillmann Bill and Enis Simsar and Thomas Hofmann},&amp;#10;       year={2025},&amp;#10;       eprint={2510.02315},&amp;#10;       archivePrefix={arXiv},&amp;#10;       primaryClass={cs.CV},&amp;#10;       url={https://arxiv.org/abs/2510.02315}, &amp;#10; }">Copy to clipboard</button>
+              </div>
+            </div>
+          
         </article>
       
+        
+        
         <article class="pub" role="article">
           <div class="pub-header">
             <div class="pub-title"><strong>Exploring Magnitude Preservation and Rotation Modulation in Diffusion Transformers</strong></div>
@@ -236,18 +279,41 @@
           
             <div class="pub-links" role="group" aria-label="Publication links">
               <a class="badge" href="https://arxiv.org/abs/2505.19122">Preprint</a>
-              <a class="badge" href="https://openreview.net/forum?id=j5NB2cpxIQ">PDF</a>
-              <a class="badge" href="#">BibTeX</a>
+              <a class="badge" href="https://openreview.net/forum?id=j5NB2cpxIQ">OpenReview</a>
+              
+                <button class="badge bibtex-trigger" type="button" data-target="bibtex-exploring-magnitude-preservation-and-rotation-modulation-in-diffusion-transformers-1">BibTeX</button>
+              
               
               <a class="badge" href="https://github.com/ericbill21/map-dit">Code</a>
               
-              <a class="badge" href="https://ericbill21.github.io/map-dit">Webpage</a>
+              
               
               
             </div>
           
+          
+            
+            <div class="bibtex-modal" id="bibtex-exploring-magnitude-preservation-and-rotation-modulation-in-diffusion-transformers-1" aria-hidden="true">
+              <div class="bibtex-dialog" role="dialog" aria-modal="true" aria-labelledby="bibtex-exploring-magnitude-preservation-and-rotation-modulation-in-diffusion-transformers-1-title">
+                <div class="bibtex-header">
+                  <h3 id="bibtex-exploring-magnitude-preservation-and-rotation-modulation-in-diffusion-transformers-1-title">BibTeX</h3>
+                  <button type="button" class="bibtex-close" aria-label="Close">&times;</button>
+                </div>
+                <pre><code>@inproceedings{bill2025exploring,
+	title={Exploring Magnitude Preservation and Rotation Modulation in Diffusion Transformers},
+	author={Anonymous},
+	booktitle={OPT 2025: Optimization for Machine Learning},
+	year={2025},
+	url={https://openreview.net/forum?id=j5NB2cpxIQ}
+	}</code></pre>
+                <button type="button" class="bibtex-copy" data-bibtex="@inproceedings{bill2025exploring,&amp;#10;	title={Exploring Magnitude Preservation and Rotation Modulation in Diffusion Transformers},&amp;#10;	author={Anonymous},&amp;#10;	booktitle={OPT 2025: Optimization for Machine Learning},&amp;#10;	year={2025},&amp;#10;	url={https://openreview.net/forum?id=j5NB2cpxIQ}&amp;#10;	}">Copy to clipboard</button>
+              </div>
+            </div>
+          
         </article>
       
+        
+        
         <article class="pub" role="article">
           <div class="pub-header">
             <div class="pub-title"><strong>JEDI: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models</strong></div>
@@ -262,8 +328,10 @@
           
             <div class="pub-links" role="group" aria-label="Publication links">
               <a class="badge" href="https://arxiv.org/abs/2505.19166">Preprint</a>
-              <a class="badge" href="https://openreview.net/pdf?id=HVQ3wL2jPI">PDF</a>
-              <a class="badge" href="#">BibTeX</a>
+              <a class="badge" href="https://openreview.net/pdf?id=HVQ3wL2jPI">OpenReview</a>
+              
+                <button class="badge bibtex-trigger" type="button" data-target="bibtex-jedi-the-force-of-jensen-shannon-divergence-in-disentangling-diffusion-models-2">BibTeX</button>
+              
               
               <a class="badge" href="https://github.com/ericbill21/jedi">Code</a>
               
@@ -272,13 +340,90 @@
               
             </div>
           
+          
+            
+            <div class="bibtex-modal" id="bibtex-jedi-the-force-of-jensen-shannon-divergence-in-disentangling-diffusion-models-2" aria-hidden="true">
+              <div class="bibtex-dialog" role="dialog" aria-modal="true" aria-labelledby="bibtex-jedi-the-force-of-jensen-shannon-divergence-in-disentangling-diffusion-models-2-title">
+                <div class="bibtex-header">
+                  <h3 id="bibtex-jedi-the-force-of-jensen-shannon-divergence-in-disentangling-diffusion-models-2-title">BibTeX</h3>
+                  <button type="button" class="bibtex-close" aria-label="Close">&times;</button>
+                </div>
+                <pre><code>@inproceedings{
+	 bill2025jedi,
+	 title={{JEDI}: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models},
+	 author={Eric Tillmann Bill and Enis Simsar and Thomas Hofmann},
+	 booktitle={Second Workshop on Test-Time Adaptation: Putting Updates to the Test! at ICML 2025},
+	 year={2025},
+	 url={https://openreview.net/forum?id=HVQ3wL2jPI}
+}</code></pre>
+                <button type="button" class="bibtex-copy" data-bibtex="@inproceedings{&amp;#10;	 bill2025jedi,&amp;#10;	 title={{JEDI}: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models},&amp;#10;	 author={Eric Tillmann Bill and Enis Simsar and Thomas Hofmann},&amp;#10;	 booktitle={Second Workshop on Test-Time Adaptation: Putting Updates to the Test! at ICML 2025},&amp;#10;	 year={2025},&amp;#10;	 url={https://openreview.net/forum?id=HVQ3wL2jPI}&amp;#10;}">Copy to clipboard</button>
+              </div>
+            </div>
+          
         </article>
       
     </div>
   </div>
 
 
-</div>
+
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const openModal = (modal) => {
+        if (!modal) return;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        const closeBtn = modal.querySelector('.bibtex-close');
+        closeBtn?.focus();
+      };
+
+      const closeModal = (modal) => {
+        if (!modal) return;
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+      };
+
+      document.addEventListener('click', (event) => {
+        const trigger = event.target.closest('.bibtex-trigger');
+        if (trigger) {
+          event.preventDefault();
+          const modal = document.getElementById(trigger.dataset.target);
+          openModal(modal);
+          return;
+        }
+
+        const closeBtn = event.target.closest('.bibtex-close');
+        if (closeBtn) {
+          const modal = closeBtn.closest('.bibtex-modal');
+          closeModal(modal);
+          return;
+        }
+
+        const overlay = event.target.classList.contains('bibtex-modal') ? event.target : null;
+        if (overlay) {
+          closeModal(overlay);
+        }
+
+        const copyBtn = event.target.closest('.bibtex-copy');
+        if (copyBtn) {
+          const text = copyBtn.dataset.bibtex.replace(/&#10;/g, '\n');
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(() => {
+              copyBtn.textContent = 'Copied!';
+              setTimeout(() => { copyBtn.textContent = 'Copy to clipboard'; }, 1500);
+            });
+          }
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          document.querySelectorAll('.bibtex-modal.is-open').forEach(closeModal);
+        }
+      });
+    });
+  </script></div>
     
   </div>
 
@@ -296,7 +441,7 @@
         
             <li><a href="https://scholar.google.com/citations?user=oLaB4tIAAAAJ" title="Google Scholar" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar-square"></i></a></li>
         
-            <li><a href="www.linkedin.com/in/ericbill21" title="Google Scholar" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://linkedin.com/in/ericbill21" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></li>
         
         </ul> 
     
