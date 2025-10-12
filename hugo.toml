@@ -3,3 +3,5 @@ languageCode = 'en-us'
 title = 'Eric Tillmann Bill'
 theme = 'barks'
 copyright = '© 2025 by Eric Tillmann Bill. <a href="/imprint/">Imprint</a>.'
+
+[params.header]
