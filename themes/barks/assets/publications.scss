@@ -65,9 +65,26 @@
         border-radius: 999px;
         font-size: 0.85rem;
         text-decoration: none;
+        color: $link-color;
+        background: #fff;
 
         &:hover {
-            border-color: #bbb;
+            border-color: $link-color;
+        }
+    }
+
+    .bibtex-trigger {
+        padding: 0.2rem 0.6rem;
+        border: 1px solid #ddd;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        background: #fff;
+        color: $link-color;
+        cursor: pointer;
+        transition: border-color 0.2s ease, color 0.2s ease;
+
+        &:hover {
+            border-color: $link-color;
         }
     }
 }
