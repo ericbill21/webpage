@@ -41,7 +41,7 @@
   selected: true
   links:
     preprint: "https://arxiv.org/abs/2505.19166"
-    pdf: "https://openreview.net/pdf?id=HVQ3wL2jPI"
+    pdf: "https://openreview.net/forum?id=HVQ3wL2jPI"
     bibtex: "@inproceedings{\n	 bill2025jedi,\n	 title={{JEDI}: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models},\n	 author={Eric Tillmann Bill and Enis Simsar and Thomas Hofmann},\n	 booktitle={Second Workshop on Test-Time Adaptation: Putting Updates to the Test! at ICML 2025},\n	 year={2025},\n	 url={https://openreview.net/forum?id=HVQ3wL2jPI}\n}"
     webpage: "https://ericbill21.github.io/JEDI/"
     code: "https://github.com/ericbill21/jedi"
