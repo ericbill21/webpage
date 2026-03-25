@@ -11,13 +11,13 @@
 
 - title: "Optimal Control Meets Flow Matching: A Principled Route to Multi-Subject Fidelity"
   authors: "Eric Tillmann Bill, Enis Simsar, Thomas Hofmann"
-  venue: "Preprint ArXiv"
+  venue: "CVPR'26, Creative Video Editing and Understanding Workshop"
   details: ""
   year: 2025
   selected: true
   links:
     preprint: "https://arxiv.org/abs/2510.02315"
-    bibtex: "@misc{bill2025focus,\n       title={Optimal Control Meets Flow Matching: A Principled Route to Multi-Subject Fidelity}, \n       author={Eric Tillmann Bill and Enis Simsar and Thomas Hofmann},\n       year={2025},\n       eprint={2510.02315},\n       archivePrefix={arXiv},\n       primaryClass={cs.CV},\n       url={https://arxiv.org/abs/2510.02315}, \n }"
+    bibtex: "@misc{bill2025focus,\n       title={FOCUS: Optimal Control for Multi-Entity World Modeling in Text-to-Image Generation}, \n       author={Eric Tillmann Bill and Enis Simsar and Thomas Hofmann},\n       year={2026},\n       eprint={2510.02315},\n       archivePrefix={arXiv},\n       primaryClass={cs.CV},\n       url={https://arxiv.org/abs/2510.02315}, \n }"
     webpage: "https://ericbill21.github.io/FOCUS/"
     code: "https://github.com/ericbill21/FOCUS"
 
