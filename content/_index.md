@@ -4,12 +4,11 @@ layout = "landing_page"
 image = "images/title_pic.jpeg"
 description = "Main Landing Page for my personal website"
 +++
-
 Hi, I’m Eric! 👋
 
-I’m a master’s student at ETH Zurich working on generative image models. I began at RWTH Aachen, where I wrote my bachelor’s thesis on graph neural networks with [Christopher Morris](https://chrsmrrs.github.io/). From there, I shifted into generative modeling at ETH Zurich, exploring magnitude-preservation methods for Diffusion Transformers with [Cristian Perez Jensen](https://github.com/cristianpjensen) (NeurIPS’26 OPT). Recently, I’ve focused on multi-subject text-to-image: JEDI (ICML’25 PUT), followed by FOCUS, which casts multi-subject fidelity as stochastic optimal control and improves on JEDI, with [Enis Simsar](https://enis.dev/) and [Thomas Hofmann](https://da.inf.ethz.ch/people/ThomasHofmann/).
+I’m a master’s student at ETH Zurich, where I work on generative image models. I started at RWTH Aachen, where I wrote my bachelor’s thesis on graph neural networks with [Christopher Morris](https://chrsmrrs.github.io/). I then moved into generative modeling at ETH Zurich, studying magnitude-preservation methods for Diffusion Transformers with [Cristian Perez Jensen](https://github.com/cristianpjensen) (NeurIPS’26 OPT). More recently, I’ve focused on multi-subject text-to-image generation: first with JEDI (ICML’25 PUT), and then with FOCUS (CVPR’26 CVEU), which frames multi-subject fidelity as a stochastic optimal control problem and improves on JEDI, in collaboration with [Enis Simsar](https://enis.dev/) and [Thomas Hofmann](https://da.inf.ethz.ch/people/ThomasHofmann/).
 
-I’ve completed industry internships in Stuttgart and Singapore, and I’m now finishing my master’s thesis on vision-language models via discrete flow matching. I expect to graduate in April 2026.
+Along the way, I completed industry internships in Stuttgart and Singapore. I’m currently finishing my master’s thesis on vision-language models via discrete flow matching under the supervision of [Enis Simsar](https://enis.dev/) and [Alessio Tionioni](https://alessiotonioni.github.io/), and I expect to graduate in May 2026.
 
 ## News 
 - Mar 2026, *FOCUS* accepted to CVPR'26 [CVEU Workshop](https://cveu.github.io/) 🖼️
