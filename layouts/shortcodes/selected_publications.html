@@ -21,6 +21,7 @@
           </div>
           {{ with $pub.links }}
             <div class="pub-links" role="group" aria-label="Publication links">
+              {{ with .doi }}<a class="badge" href="{{ . }}">Proceedings</a>{{ end }}
               {{ with .preprint }}<a class="badge" href="{{ . }}">Preprint</a>{{ end }}
               {{ with .pdf }}<a class="badge" href="{{ . }}">OpenReview</a>{{ end }}
               {{ if $bibtex }}
@@ -32,7 +33,6 @@
               {{ with .code }}<a class="badge" href="{{ . }}">Code</a>{{ end }}
               {{ with .dataset }}<a class="badge" href="{{ . }}">Dataset</a>{{ end }}
               {{ with .webpage }}<a class="badge" href="{{ . }}">Webpage</a>{{ end }}
-              {{ with .doi }}<a class="badge" href="{{ . }}">DOI</a>{{ end }}
               {{ with .presentation }}<a class="badge" href="{{ . }}">Oral presentation</a>{{ end }}
             </div>
           {{ end }}
