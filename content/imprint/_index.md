@@ -8,7 +8,7 @@ Eric Tillmann Bill
 Zurich, Switzerland
 
 ## Contact
-- Email: [eric.billx21@gmail.com](mailto:eric.billx21@gmail.com)
+- Email: [eric.tillmann.bill@gmail.com](mailto:eric.tillmann.bill@gmail.com)
 
 Please reach out via email for media enquiries, collaboration requests, or issues regarding the content published on this site.
 
