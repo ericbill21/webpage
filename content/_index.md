@@ -13,7 +13,7 @@ Along the way, I completed industry internships in Stuttgart and Singapore. I re
 I’m happy to announce that I’ll be joining Adobe <img src="/images/adobe_logo.svg" alt="Adobe" style="height:1em; vertical-align:middle; display:inline;"> Switzerland full time in August!
 
 ## News 
-- Mar 2026, *FOCUS* accepted to CVPR'26 [CVEU Workshop](https://cveu.github.io/) 🖼️
+- Mar 2026, *FOCUS* accepted as **oral** to CVPR'26 [CVEU Workshop](https://cveu.github.io/) 🖼️
 - Sep 2025, *Map-DiT* accepted to NeurIPS'25 [Workshop on Optimization for ML](https://opt-ml.org/) 🧶
 - Jul 2025, *JEDI* accepted to ICML’25 [Workshop on Test-Time Adaptation](https://icml.cc/virtual/2025/workshop/39974) 🔬
 
