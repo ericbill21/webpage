@@ -48,3 +48,12 @@ The author name `Eric Tillmann Bill` is automatically bolded. The `pdf` link key
 
 - `layouts/shortcodes/` — carousel, publications, selected_publications shortcodes
 - `static/css/publications.css` — styles for publication cards and badges
+
+## Edge Delivery Services (preview branch)
+
+This `preview` branch also carries the merged-in [adobe/aem-boilerplate](https://github.com/adobe/aem-boilerplate)
+(`blocks/`, `scripts/`, `styles/`, `head.html`, etc.), added to evaluate migrating this
+site off Hugo/GitHub Pages onto AEM Edge Delivery Services. It sits alongside the Hugo
+site untouched for now — nothing is wired together yet. See @AGENTS.md for EDS-specific
+conventions (block authoring rules, local preview via `npx -y @adobe/aem-cli up`, etc.)
+before working in any of the EDS-derived files.

@@ -430,4 +430,19 @@ FodyWeavers.xsd
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
-# End of https://www.toptal.com/developers/gitignore/api/hugo,visualstudio,visualstudiocode.DS_Store
+# End of https://www.toptal.com/developers/gitignore/api/hugo,visualstudio,visualstudiocode
+.DS_Store
+
+### Edge Delivery Services (aem-boilerplate) ###
+.hlx/*
+coverage/*
+logs/*
+node_modules/*
+
+helix-importer-ui
+*.bak
+.idea
+
+# Ensure these files are tracked
+!CLAUDE.md
+!AGENTS.md
