@@ -1,0 +1,97 @@
+.carousel {
+  position: relative;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.carousel-slide {
+  display: none;
+  margin: 0;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-slide.is-active { display: block; }
+
+.carousel-slide picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.carousel-slide figcaption {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgb(0 0 0 / 70%);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgb(0 0 0 / 35%);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  background: rgb(0 0 0 / 50%);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.carousel-btn.prev { left: 12px; }
+.carousel-btn.next { right: 12px; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 60%);
+  border: none;
+  cursor: pointer;
+}
+
+.carousel-dot.is-active {
+  background: rgb(255 255 255 / 100%);
+  transform: scale(1.2);
+}
+
+@media (width <= 600px) {
+  .carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,164 @@
+.publications .pubs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.publications .pubs-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.publications .pub {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 6px 16px rgb(0 0 0 / 4%);
+  text-align: left;
+  line-height: 1.55;
+}
+
+.publications .pub-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.publications .pub-title {
+  font-size: 1.08rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.publications .pub-title strong {
+  font-weight: 600;
+}
+
+.publications .pub-authors,
+.publications .pub-venue {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.publications .pub-authors { opacity: 0.9; }
+
+.publications .pub-venue {
+  opacity: 0.75;
+  font-style: italic;
+}
+
+.publications .pub-links {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.publications .pub-links .badge,
+.publications .pub-links .bibtex-trigger {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  background: #fff;
+  cursor: pointer;
+}
+
+.publications .pub-links .badge:hover,
+.publications .pub-links .bibtex-trigger:hover {
+  border-color: #bbb;
+}
+
+.publications .pubs-year {
+  text-align: left;
+  margin: 2rem 0 1rem;
+}
+
+.bibtex-modal {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 45%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 999;
+}
+
+.bibtex-modal.is-open { display: flex; }
+
+.bibtex-dialog {
+  background: #fff;
+  border-radius: 14px;
+  width: 94vw;
+  max-width: 840px;
+  box-shadow: 0 22px 55px rgb(0 0 0 / 22%);
+  padding: 1.4rem 1.8rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.bibtex-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.bibtex-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.bibtex-close {
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #666;
+}
+
+.bibtex-close:hover { color: #000; }
+
+.bibtex-dialog pre {
+  margin: 0;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+  max-height: 320px;
+  overflow: auto;
+  font-size: 0.9rem;
+}
+
+.bibtex-dialog code {
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  white-space: pre-wrap;
+}
+
+.bibtex-copy {
+  align-self: flex-end;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.bibtex-copy:hover {
+  background: #f2f2f2;
+  border-color: #bbb;
+}
+
+@media (width <= 600px) {
+  .bibtex-dialog { padding: 1rem 1.1rem 1.25rem; }
+  .bibtex-dialog pre { font-size: 0.85rem; }
+}

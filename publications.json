@@ -1,0 +1,84 @@
+[
+  {
+    "title": "Performance Analysis of Different Reward Functions in Reinforcement Learning for the Scheduling of Modular Automotive Production Systems",
+    "authors": "Jan Markus Gelfgren, Eric Tillmann Bill, Tim Luther, Simon Hagemann, Sigrid Wenzel",
+    "venue": "Conference on Intelligent Computation in Manufacturing Engineering",
+    "details": "",
+    "year": 2023,
+    "selected": false,
+    "links": {
+      "pdf": "https://www.sciencedirect.com/science/article/pii/S2212827124008709",
+      "bibtex": "@article{GELFGREN202481,\n title = {Performance Analysis of Different Reward Functions in Reinforcement Learning for the Scheduling of Modular Automotive Production Systems},\n journal = {Procedia CIRP},\n volume = {126},\n pages = {81-86},\n year = {2024},\n note = {17th CIRP Conference on Intelligent Computation in Manufacturing Engineering (CIRP ICME ‘23)},\n issn = {2212-8271},\n doi = {https://doi.org/10.1016/j.procir.2024.08.299},\n url = {https://www.sciencedirect.com/science/article/pii/S2212827124008709},\n author = {Jan Markus Gelfgren and Eric Tillmann Bill and Tim Luther and Simon Hagemann and Sigrid Wenzel},\n keywords = {Reinforcement Learning, Reward Functions, Production Scheduling, Modular Production},\n abstract = {Conventional, linear production lines struggle with the new flexibility requirements of the automotive market. Modular production has the potential to radically improve the production flexibility. However, scheduling modular production systems is still an open research question. Reinforcement learning (RL) is a form of artificial intelligence that shows great potential in scheduling complex modular production systems. Nonetheless, the performance of RL agents heavily depends on their reward function. Designing an optimal reward function is highly complex. This paper addresses this research gap and systematically compares six different reward functions for a variety of different modular production scenarios. In addition, a new learning method using resets is proposed and its performance is compared with the standard learning approach. The results suggest that dense reward functions perform better than a sparse one. However, there are major case-to-case discrepancies. The proposed learning method outperforms the standard learning method by 7 % on average. Nonetheless, the performance difference between different scenarios is larger than with the standard approach.}\n }",
+      "doi": "https://doi.org/10.1016/j.procir.2024.08.299"
+    }
+  },
+  {
+    "title": "FOCUS: Optimal Control for Multi-Entity World Modeling in Text-to-Image Generation",
+    "authors": "Eric Tillmann Bill, Enis Simsar, Thomas Hofmann",
+    "venue": "CVPRW 2026, Creative Video Editing and Understanding",
+    "details": "Oral",
+    "year": 2026,
+    "selected": true,
+    "links": {
+      "preprint": "https://arxiv.org/abs/2510.02315",
+      "doi": "https://openaccess.thecvf.com/content/CVPR2026W/CVEU/html/Bill_FOCUS_Optimal_Control_for_Multi-Entity_World_Modeling_in_Text-to-Image_Generation_CVPRW_2026_paper.html",
+      "bibtex": "@InProceedings{Bill_2026_CVPR,\n    author    = {Bill, Eric Tillmann and Simsar, Enis and Hofmann, Thomas},\n    title     = {FOCUS: Optimal Control for Multi-Entity World Modeling in Text-to-Image Generation},\n    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},\n    month     = {June},\n    year      = {2026}\n}",
+      "webpage": "https://ericbill21.github.io/FOCUS/",
+      "code": "https://github.com/ericbill21/FOCUS"
+    }
+  },
+  {
+    "title": "FullFlow: Upgrading Text-to-Image Flow Matching Models for Bidirectional Vision-Language Generation",
+    "authors": "Eric Tillmann Bill, Enis Simsar, Alessio Tonioni, Thomas Hofmann",
+    "venue": "Preprint",
+    "details": "",
+    "year": 2026,
+    "selected": false,
+    "links": {
+      "preprint": "https://arxiv.org/abs/2605.20316",
+      "bibtex": "@misc{bill2026fullflow,\n  title={FullFlow: Upgrading Text-to-Image Flow Matching Models for Bidirectional Vision-Language Generation},\n  author={Eric Tillmann Bill and Enis Simsar and Alessio Tonioni and Thomas Hofmann},\n  year={2026},\n  eprint={2605.20316},\n  archivePrefix={arXiv},\n  primaryClass={cs.CV},\n  url={https://arxiv.org/abs/2605.20316}\n}",
+      "webpage": "https://ericbill21.github.io/fullflow/"
+    }
+  },
+  {
+    "title": "Exploring Magnitude Preservation and Rotation Modulation in Diffusion Transformers",
+    "authors": "Eric Tillmann Bill, Cristian Perez Jensen, Sotiris Anagnostidis, Dimitri von Rütte",
+    "venue": "NeurIPS 2025, Optimization for Machine Learning Workshop",
+    "details": "",
+    "year": 2025,
+    "selected": true,
+    "links": {
+      "preprint": "https://arxiv.org/abs/2505.19122",
+      "pdf": "https://openreview.net/forum?id=j5NB2cpxIQ",
+      "bibtex": "@inproceedings{bill2025exploring,\n\ttitle={Exploring Magnitude Preservation and Rotation Modulation in Diffusion Transformers},\n\tauthor={Anonymous},\n\tbooktitle={OPT 2025: Optimization for Machine Learning},\n\tyear={2025},\n\turl={https://openreview.net/forum?id=j5NB2cpxIQ}\n\t}",
+      "code": "https://github.com/ericbill21/map-dit"
+    }
+  },
+  {
+    "title": "JEDI: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models",
+    "authors": "Eric Tillmann Bill, Enis Simsar, Thomas Hofmann",
+    "venue": "ICML 2025, Putting Updates to the Test Workshop",
+    "details": "",
+    "year": 2025,
+    "selected": true,
+    "links": {
+      "preprint": "https://arxiv.org/abs/2505.19166",
+      "pdf": "https://openreview.net/forum?id=HVQ3wL2jPI",
+      "bibtex": "@inproceedings{\n\t bill2025jedi,\n\t title={{JEDI}: The Force of Jensen-Shannon Divergence in Disentangling Diffusion Models},\n\t author={Eric Tillmann Bill and Enis Simsar and Thomas Hofmann},\n\t booktitle={Second Workshop on Test-Time Adaptation: Putting Updates to the Test! at ICML 2025},\n\t year={2025},\n\t url={https://openreview.net/forum?id=HVQ3wL2jPI}\n}",
+      "webpage": "https://ericbill21.github.io/JEDI/",
+      "code": "https://github.com/ericbill21/jedi"
+    }
+  },
+  {
+    "title": "A Theoretical and Empirical Investigation into the Equivalence of Graph Neural Networks and the Weisfeiler-Leman Algorithm",
+    "authors": "Eric Tillmann Bill",
+    "venue": "Bachelor's Thesis, RWTH Aachen University",
+    "details": "",
+    "year": 2023,
+    "selected": false,
+    "links": {
+      "pdf": "https://ericbill21.github.io/Thesis_Eric_Bill.pdf",
+      "code": "https://github.com/ericbill21/BachelorThesis"
+    }
+  }
+]
