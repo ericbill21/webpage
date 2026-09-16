@@ -7,6 +7,9 @@
   --ink-3: #8a847a;
   --rule: #e4ded2;
   --accent: #8a3b12;
+  --link: #2560a8;
+  --link-hover: #173f73;
+  --link-underline: #b9cbe3;
 
   /* type */
   --font-sans: inter, inter-fallback, system-ui, sans-serif;
@@ -226,9 +229,9 @@ img {
 
 /* links */
 a:any-link {
-  color: var(--ink);
+  color: var(--link);
   text-decoration: underline;
-  text-decoration-color: var(--rule);
+  text-decoration-color: var(--link-underline);
   text-decoration-thickness: 1.5px;
   text-underline-offset: 3px;
   overflow-wrap: break-word;
@@ -236,8 +239,8 @@ a:any-link {
 }
 
 a:hover {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
+  color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
 }
 
 input,

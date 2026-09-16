@@ -18,5 +18,5 @@ footer .footer a:any-link {
 }
 
 footer .footer a:hover {
-  color: var(--accent);
+  color: var(--link-hover);
 }
