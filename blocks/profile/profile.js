@@ -70,7 +70,7 @@ export default function decorate(block) {
     body.append(linkRow);
   }
 
-  block.replaceChildren();
+  block.replaceChildren(body);
   if (picture) {
     const photo = document.createElement('div');
     photo.className = 'profile-photo';
@@ -79,5 +79,4 @@ export default function decorate(block) {
     photo.append(picture);
     block.append(photo);
   }
-  block.append(body);
 }
