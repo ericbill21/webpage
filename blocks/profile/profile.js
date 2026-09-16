@@ -31,11 +31,15 @@ export default function decorate(block) {
   const picture = block.querySelector('picture');
   const textCell = cells.find((cell) => !cell.querySelector('picture')) || document.createElement('div');
 
-  const links = [...textCell.querySelectorAll('a')];
-  links.forEach((link) => {
-    const parent = link.closest('p, li');
-    link.remove();
-    if (parent && !parent.textContent.replace(/[\s|·•,/]/g, '')) parent.remove();
+  const isSeparatorsOnly = (text) => !text.replace(/[\s|·•,/]/g, '');
+  const links = [];
+  textCell.querySelectorAll('p, li').forEach((line) => {
+    const lineLinks = [...line.querySelectorAll('a')];
+    const nonLinkText = lineLinks.reduce((text, a) => text.replace(a.textContent, ''), line.textContent);
+    if (lineLinks.length && isSeparatorsOnly(nonLinkText)) {
+      links.push(...lineLinks);
+      line.remove();
+    }
   });
 
   let name = textCell.querySelector('h1, h2, h3');
