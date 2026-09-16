@@ -11,10 +11,10 @@
 
 .profile .profile-photo img {
   display: block;
-  width: 112px;
-  height: 112px;
+  width: 224px;
+  height: 224px;
   border: 1px solid var(--rule);
-  border-radius: 10px;
+  border-radius: 14px;
   object-fit: cover;
 }
 
@@ -45,7 +45,7 @@
   }
 
   .profile .profile-photo img {
-    width: 96px;
-    height: 96px;
+    width: 192px;
+    height: 192px;
   }
 }
