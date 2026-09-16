@@ -1,59 +1,32 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Personal academic homepage of Eric Tillmann Bill, built on AEM Edge Delivery Services (EDS). Code lives in this repo; page content is authored in da.live (`https://da.live/#/ericbill21/webpage`). See @AGENTS.md for EDS conventions.
 
 ## Commands
 
 ```bash
-# Serve locally with live reload
-hugo server
-
-# Build static site to public/
-hugo
-
-# Include draft content while developing
-hugo server -D
+npx -y @adobe/aem-cli up                  # local code + content from aem.page preview
+npx -y @adobe/aem-cli up --html-folder drafts   # also serve local drafts/*.html test pages
+npm run lint                              # ESLint + Stylelint (runs in CI)
 ```
 
-The `public/` directory is the built output — edit source files, not `public/`.
+`drafts/` is git-ignored. Draft pages need `head.html` pasted into `<head>`, and fragments (`nav`, `footer`) need a `*.plain.html` copy.
 
-## Architecture
+## Design system
 
-Personal academic website for Eric Tillmann Bill, built with [Hugo](https://gohugo.io/) using the **barks** theme (git submodule at `themes/barks`).
+`styles/styles.css` defines all tokens: warm paper palette (`--paper`, `--ink`, `--ink-2/3`, `--rule`, `--accent`), `--font-sans` (Inter) and `--font-mono` (JetBrains Mono), a 680px `--measure` column. Fonts are self-hosted in `fonts/`. `.chip` is the shared mono pill used for link badges. `h2` renders as a mono uppercase section label with a hairline.
 
-### Publications system
+## Blocks (authored as tables in da.live)
 
-`data/publications.yaml` is the single source of truth for all publications. Each entry has: `title`, `authors`, `venue`, `details`, `year`, `selected` (bool), and `links` (object with optional keys: `preprint`, `pdf`, `bibtex`, `code`, `webpage`, `doi`, `ads`, `dataset`, `presentation`).
+| Block | Table content |
+|---|---|
+| `header` / `footer` | Loaded from the `nav` / `footer` docs. `nav`: first link = brand, list items = nav links |
+| `profile` | One row: photo \| name heading, role line(s), links (email/GitHub/Scholar get icons by URL) |
+| `news` | One row per item: date \| text |
+| `publications` | Header only; full list grouped by year |
+| `selected-publications` | Header only; entries with `selected: true` |
+| `carousel` | One row per photo: image (set alt text) \| caption |
 
-Two shortcodes render from this data:
-- `{{< publications >}}` — all entries, grouped by year descending
-- `{{< selected_publications >}}` — only `selected: true` entries, sorted by year desc
+## Publications
 
-The author name `Eric Tillmann Bill` is automatically bolded. The `pdf` link key renders as "OpenReview" in the UI (not "PDF"). BibTeX strings render in a modal with copy-to-clipboard.
-
-### Carousel shortcode
-
-```
-{{< carousel
-    images="images/a.jpeg,images/b.jpeg"
-    alts="Alt 1|Alt 2"
-    captions="Caption 1|Caption 2"
-    autoplay="5000"
->}}
-```
-
-`images` is comma-separated; `alts` and `captions` are pipe-separated. Images are served from `static/images/`.
-
-### Custom assets
-
-- `layouts/shortcodes/` — carousel, publications, selected_publications shortcodes
-- `static/css/publications.css` — styles for publication cards and badges
-
-## Edge Delivery Services (preview branch)
-
-This `preview` branch also carries the merged-in [adobe/aem-boilerplate](https://github.com/adobe/aem-boilerplate)
-(`blocks/`, `scripts/`, `styles/`, `head.html`, etc.), added to evaluate migrating this
-site off Hugo/GitHub Pages onto AEM Edge Delivery Services. It sits alongside the Hugo
-site untouched for now — nothing is wired together yet. See @AGENTS.md for EDS-specific
-conventions (block authoring rules, local preview via `npx -y @adobe/aem-cli up`, etc.)
-before working in any of the EDS-derived files.
+`publications.json` is the single source of truth, rendered by `scripts/pubs.js` (shared by both publication blocks). Entry fields: `title`, `authors`, `venue`, `details` (shown as a tag, e.g. "Oral"), `year`, `selected`, optional `teaser` (image path, e.g. `/images/teasers/focus.jpg`; falls back to a tile with the title prefix and year), and `links` with optional `doi` (Paper), `preprint` (arXiv), `pdf` (OpenReview or PDF), `webpage` (Project), `code`, `dataset`, `presentation` (Talk), `ads`, `bibtex` (opens a copyable dialog). `Eric Tillmann Bill` is bolded in author lists.

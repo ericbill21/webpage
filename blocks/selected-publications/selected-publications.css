@@ -1,164 +1,190 @@
-.selected-publications .pubs {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.selected-publications .pubs-year {
+  margin: var(--space-5) 0 var(--space-3);
+}
+
+.selected-publications .pubs-year-group:first-child .pubs-year {
+  margin-top: 0;
 }
 
 .selected-publications .pubs-list {
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 
 .selected-publications .pub {
-  padding: 1.1rem 1.25rem;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 6px 16px rgb(0 0 0 / 4%);
-  text-align: left;
-  line-height: 1.55;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--rule);
 }
 
-.selected-publications .pub-header {
+.selected-publications .pub:first-child {
+  padding-top: var(--space-2);
+}
+
+.selected-publications .pub:last-child {
+  border-bottom: 0;
+}
+
+.selected-publications .pub-teaser {
+  aspect-ratio: 8 / 5;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--paper-2);
+}
+
+.selected-publications .pub-teaser img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.selected-publications .pub-teaser-fallback {
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background-image: radial-gradient(var(--rule) 1px, transparent 1px);
+  background-size: 10px 10px;
+  font-family: var(--font-mono);
+}
+
+.selected-publications .pub-teaser-name {
+  padding: 0 6px;
+  background: var(--paper-2);
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.selected-publications .pub-teaser-year {
+  padding: 0 6px;
+  background: var(--paper-2);
+  color: var(--ink-3);
+  font-size: var(--text-xs);
 }
 
 .selected-publications .pub-title {
-  font-size: 1.08rem;
+  margin: 0 0 var(--space-1);
+  font-size: 1rem;
   line-height: 1.4;
-  margin: 0;
+  letter-spacing: -0.005em;
 }
 
-.selected-publications .pub-title strong {
+.selected-publications .pub-title a:any-link {
+  text-decoration: none;
+}
+
+.selected-publications .pub-title a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+}
+
+.selected-publications .pub-authors {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.selected-publications .pub-authors strong {
+  color: var(--ink);
   font-weight: 600;
 }
 
-.selected-publications .pub-authors,
 .selected-publications .pub-venue {
-  margin: 0;
-  line-height: 1.45;
+  margin: var(--space-1) 0 0;
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: 1.5;
 }
 
-.selected-publications .pub-authors { opacity: 0.9; }
-
-.selected-publications .pub-venue {
-  opacity: 0.75;
-  font-style: italic;
+.selected-publications .pub-tag {
+  margin-left: 2px;
+  padding: 0 6px;
+  border-radius: 3px;
+  background: #f4e4d6;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .selected-publications .pub-links {
-  margin-top: 0.8rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 6px;
+  margin-top: var(--space-3);
 }
 
-.selected-publications .pub-links .badge,
-.selected-publications .pub-links .bibtex-trigger {
-  padding: 0.2rem 0.6rem;
-  border: 1px solid #ddd;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  text-decoration: none;
-  background: #fff;
-  cursor: pointer;
-}
+@media (width <= 560px) {
+  .selected-publications .pub {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
 
-.selected-publications .pub-links .badge:hover,
-.selected-publications .pub-links .bibtex-trigger:hover {
-  border-color: #bbb;
+  .selected-publications .pub-teaser-fallback {
+    display: none;
+  }
 }
-
-.selected-publications .pubs-year {
-  text-align: left;
-  margin: 2rem 0 1rem;
-}
-
-.bibtex-modal {
-  position: fixed;
-  inset: 0;
-  background: rgb(0 0 0 / 45%);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  z-index: 999;
-}
-
-.bibtex-modal.is-open { display: flex; }
 
 .bibtex-dialog {
-  background: #fff;
-  border-radius: 14px;
-  width: 94vw;
-  max-width: 840px;
-  box-shadow: 0 22px 55px rgb(0 0 0 / 22%);
-  padding: 1.4rem 1.8rem 1.6rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
+  width: min(720px, calc(100vw - 32px));
+  padding: var(--space-4);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 24px 60px rgb(31 29 26 / 18%);
 }
 
-.bibtex-header {
+.bibtex-dialog::backdrop {
+  background: rgb(31 29 26 / 35%);
+  backdrop-filter: blur(2px);
+}
+
+.bibtex-dialog .bibtex-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  margin-bottom: var(--space-3);
 }
 
-.bibtex-header h3 {
-  margin: 0;
-  font-size: 1.05rem;
+.bibtex-dialog .bibtex-title {
+  color: var(--ink-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.bibtex-close {
-  border: none;
-  background: transparent;
-  font-size: 1.5rem;
+.bibtex-dialog .bibtex-close {
+  padding: 0 6px;
+  border: 0;
+  background: none;
+  color: var(--ink-3);
+  font-size: 1.4rem;
   line-height: 1;
   cursor: pointer;
-  color: #666;
 }
 
-.bibtex-close:hover { color: #000; }
+.bibtex-dialog .bibtex-close:hover {
+  color: var(--ink);
+}
 
 .bibtex-dialog pre {
-  margin: 0;
-  width: 100%;
-  padding: 1rem 1.2rem;
-  background: #f5f5f5;
-  border-radius: 8px;
-  max-height: 320px;
-  overflow: auto;
-  font-size: 0.9rem;
-}
-
-.bibtex-dialog code {
-  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  max-height: 50vh;
+  margin: 0 0 var(--space-3);
+  font-size: 13px;
+  line-height: 1.55;
   white-space: pre-wrap;
 }
 
-.bibtex-copy {
-  align-self: flex-end;
-  padding: 0.35rem 0.9rem;
-  font-size: 0.85rem;
-  border: 1px solid #ccc;
-  border-radius: 999px;
-  background: #fff;
-  cursor: pointer;
-}
-
-.bibtex-copy:hover {
-  background: #f2f2f2;
-  border-color: #bbb;
-}
-
-@media (width <= 600px) {
-  .bibtex-dialog { padding: 1rem 1.1rem 1.25rem; }
-  .bibtex-dialog pre { font-size: 0.85rem; }
+.bibtex-dialog .bibtex-copy {
+  float: right;
 }

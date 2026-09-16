@@ -1,144 +1,151 @@
 const AUTHOR_NAME = 'Eric Tillmann Bill';
 
 const LINK_LABELS = [
-  ['doi', 'Proceedings'],
-  ['preprint', 'Preprint'],
+  ['doi', 'Paper'],
+  ['preprint', 'arXiv'],
   ['pdf', 'OpenReview'],
-  ['ads', 'NASA/ADS'],
+  ['webpage', 'Project'],
   ['code', 'Code'],
   ['dataset', 'Dataset'],
-  ['webpage', 'Webpage'],
-  ['presentation', 'Oral presentation'],
+  ['presentation', 'Talk'],
+  ['ads', 'NASA/ADS'],
 ];
 
-let cachedPubs;
-async function fetchPublications() {
-  if (cachedPubs) return cachedPubs;
-  const resp = await fetch('/publications.json');
-  cachedPubs = resp.ok ? resp.json() : [];
-  return cachedPubs;
+const TITLE_LINK_PRIORITY = ['webpage', 'doi', 'preprint', 'pdf'];
+
+let pubsPromise;
+function fetchPublications() {
+  pubsPromise = pubsPromise || fetch('/publications.json')
+    .then((resp) => (resp.ok ? resp.json() : []))
+    .catch(() => []);
+  return pubsPromise;
 }
 
-function boldAuthor(authors) {
-  if (!authors) return '';
-  return authors.split(AUTHOR_NAME).join(`<strong>${AUTHOR_NAME}</strong>`);
+function shortName(title) {
+  const prefix = title.split(':')[0].trim();
+  return prefix !== title && prefix.length <= 12 ? prefix : '';
 }
 
-let modalEl;
-function ensureModal() {
-  if (modalEl) return modalEl;
-  modalEl = document.createElement('div');
-  modalEl.className = 'bibtex-modal';
-  modalEl.innerHTML = `
-    <div class="bibtex-dialog" role="dialog" aria-modal="true">
-      <div class="bibtex-header">
-        <h3>BibTeX</h3>
-        <button type="button" class="bibtex-close" aria-label="Close">&times;</button>
-      </div>
-      <pre><code></code></pre>
-      <button type="button" class="bibtex-copy">Copy to clipboard</button>
-    </div>`;
-  document.body.append(modalEl);
-  modalEl.addEventListener('click', (e) => {
-    if (e.target === modalEl || e.target.closest('.bibtex-close')) modalEl.classList.remove('is-open');
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text) node.textContent = text;
+  return node;
+}
+
+function authorsNode(authors = '') {
+  const p = el('p', 'pub-authors');
+  authors.split(AUTHOR_NAME).forEach((part, i) => {
+    if (i > 0) p.append(el('strong', '', AUTHOR_NAME));
+    p.append(part);
   });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') modalEl.classList.remove('is-open');
-  });
-  return modalEl;
+  return p;
 }
 
-function openBibtexModal(bibtex) {
-  const modal = ensureModal();
-  modal.querySelector('code').textContent = bibtex;
-  const copyBtn = modal.querySelector('.bibtex-copy');
-  copyBtn.textContent = 'Copy to clipboard';
-  copyBtn.onclick = () => {
-    navigator.clipboard.writeText(bibtex).then(() => {
-      copyBtn.textContent = 'Copied!';
-      setTimeout(() => { copyBtn.textContent = 'Copy to clipboard'; }, 1500);
+let dialog;
+function openBibtex(bibtex) {
+  if (!dialog) {
+    dialog = el('dialog', 'bibtex-dialog');
+    const header = el('div', 'bibtex-header');
+    const close = el('button', 'bibtex-close', '×');
+    close.type = 'button';
+    close.setAttribute('aria-label', 'Close');
+    close.addEventListener('click', () => dialog.close());
+    header.append(el('span', 'bibtex-title', 'BibTeX'), close);
+    const copy = el('button', 'chip bibtex-copy', 'Copy');
+    copy.type = 'button';
+    copy.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(dialog.querySelector('code').textContent);
+      copy.textContent = 'Copied';
+      setTimeout(() => { copy.textContent = 'Copy'; }, 1500);
     });
-  };
-  modal.classList.add('is-open');
+    const pre = el('pre');
+    pre.append(el('code'));
+    dialog.append(header, pre, copy);
+    dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+    document.body.append(dialog);
+  }
+  dialog.querySelector('code').textContent = bibtex;
+  dialog.showModal();
 }
 
-function buildBadges(pub) {
+function teaserNode(pub) {
+  const teaser = el('div', 'pub-teaser');
+  if (pub.teaser) {
+    const img = el('img');
+    img.src = pub.teaser;
+    img.alt = `Teaser figure for ${shortName(pub.title) || pub.title}`;
+    img.loading = 'lazy';
+    img.width = 320;
+    img.height = 200;
+    teaser.append(img);
+  } else {
+    teaser.classList.add('pub-teaser-fallback');
+    const name = shortName(pub.title);
+    if (name) teaser.append(el('span', 'pub-teaser-name', name));
+    teaser.append(el('span', 'pub-teaser-year', String(pub.year)));
+  }
+  return teaser;
+}
+
+function buildPub(pub) {
   const links = pub.links || {};
-  const wrap = document.createElement('div');
-  wrap.className = 'pub-links';
-  LINK_LABELS.forEach(([key, label]) => {
+  const article = el('article', 'pub');
+  const body = el('div', 'pub-body');
+
+  const title = el('h3', 'pub-title');
+  const titleHref = TITLE_LINK_PRIORITY.map((key) => links[key]).find(Boolean);
+  if (titleHref) {
+    const a = el('a', '', pub.title);
+    a.href = titleHref;
+    title.append(a);
+  } else {
+    title.textContent = pub.title;
+  }
+
+  const venue = el('p', 'pub-venue', pub.venue);
+  if (pub.details) venue.append(' ', el('span', 'pub-tag', pub.details));
+
+  const chips = el('div', 'pub-links');
+  LINK_LABELS.forEach(([key, defaultLabel]) => {
     if (!links[key]) return;
-    const a = document.createElement('a');
-    a.className = 'badge';
+    const label = key === 'pdf' && !links.pdf.includes('openreview.net') ? 'PDF' : defaultLabel;
+    const a = el('a', 'chip', label);
     a.href = links[key];
-    a.textContent = label;
-    wrap.append(a);
+    chips.append(a);
   });
   if (links.bibtex) {
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'badge bibtex-trigger';
-    btn.textContent = 'BibTeX';
-    btn.addEventListener('click', () => openBibtexModal(links.bibtex));
-    wrap.append(btn);
+    const button = el('button', 'chip', 'BibTeX');
+    button.type = 'button';
+    button.addEventListener('click', () => openBibtex(links.bibtex));
+    chips.append(button);
   }
-  return wrap;
-}
 
-function buildPubArticle(pub) {
-  const article = document.createElement('article');
-  article.className = 'pub';
-
-  const header = document.createElement('div');
-  header.className = 'pub-header';
-
-  const title = document.createElement('div');
-  title.className = 'pub-title';
-  title.innerHTML = `<strong>${pub.title}</strong>`;
-  header.append(title);
-
-  const authors = document.createElement('div');
-  authors.className = 'pub-authors';
-  authors.innerHTML = boldAuthor(pub.authors);
-  header.append(authors);
-
-  const venue = document.createElement('div');
-  venue.className = 'pub-venue';
-  venue.textContent = pub.details ? `${pub.venue}, ${pub.details}` : pub.venue;
-  header.append(venue);
-
-  article.append(header, buildBadges(pub));
+  body.append(title, authorsNode(pub.authors), venue, chips);
+  article.append(teaserNode(pub), body);
   return article;
 }
 
-export default async function decoratePublications(block, { selectedOnly = false } = {}) {
-  let pubs = await fetchPublications();
-  if (selectedOnly) pubs = pubs.filter((p) => p.selected);
+function listOf(pubs) {
+  const list = el('div', 'pubs-list');
+  pubs.forEach((pub) => list.append(buildPub(pub)));
+  return list;
+}
 
-  const wrap = document.createElement('div');
-  wrap.className = 'pubs';
+export default async function decoratePublications(block, { selectedOnly = false } = {}) {
+  const all = await fetchPublications();
+  const wrap = el('div', 'pubs');
 
   if (selectedOnly) {
-    const list = document.createElement('div');
-    list.className = 'pubs-list';
-    [...pubs].sort((a, b) => b.year - a.year).forEach((p) => list.append(buildPubArticle(p)));
-    wrap.append(list);
+    wrap.append(listOf(all.filter((p) => p.selected).sort((a, b) => b.year - a.year)));
   } else {
-    const years = [...new Set(pubs.map((p) => p.year))].sort((a, b) => b - a);
+    const years = [...new Set(all.map((p) => p.year))].sort((a, b) => b - a);
     years.forEach((year) => {
-      const section = document.createElement('section');
-      section.className = 'pubs-year-group';
-      const h2 = document.createElement('h2');
-      h2.className = 'pubs-year';
-      h2.textContent = year;
-      const list = document.createElement('div');
-      list.className = 'pubs-list';
-      pubs.filter((p) => p.year === year).forEach((p) => list.append(buildPubArticle(p)));
-      section.append(h2, list);
-      wrap.append(section);
+      const group = el('section', 'pubs-year-group');
+      group.append(el('h2', 'pubs-year', String(year)), listOf(all.filter((p) => p.year === year)));
+      wrap.append(group);
     });
   }
 
-  block.textContent = '';
-  block.append(wrap);
+  block.replaceChildren(wrap);
 }

@@ -37,18 +37,41 @@
   </script>
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
-    main.error {
-      min-height: calc(100vh - var(--nav-height));
+    main.error .section {
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      min-height: calc(100vh - var(--nav-height) - 160px);
+      max-width: var(--measure);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
     }
 
     main.error .error-number {
-      width: 100%;
+      margin: 0;
+      color: var(--ink-3);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
     }
 
-    main.error .error-number text {
-      font-family: monospace;
+    main.error .error-message {
+      display: block;
+      margin: 8px 0 24px;
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 2rem;
+      letter-spacing: -0.02em;
+      text-transform: none;
+    }
+
+    main.error .error-message::after {
+      content: none;
+    }
+
+    main.error .button-container {
+      display: flex;
+      gap: 8px;
     }
   </style>
   <link rel="stylesheet" href="/styles/lazy-styles.css">
@@ -58,10 +81,8 @@
   <header></header>
   <main class="error">
     <div class="section">
-      <svg viewBox="1 0 38 18" class="error-number">
-        <text x="0" y="17">404</text>
-      </svg>
-      <h2 class="error-message">Page Not Found</h2>
+      <p class="error-number">ERROR 404</p>
+      <h2 class="error-message">This page doesn't exist.</h2>
       <p class="button-container">
         <a href="/" class="button secondary error-button-home">Go home</a>
       </p>

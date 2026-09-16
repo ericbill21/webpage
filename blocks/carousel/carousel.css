@@ -1,97 +1,110 @@
 .carousel {
   position: relative;
-  margin: 1.5rem 0;
-  width: 100%;
+  margin: var(--space-4) 0;
 }
 
-.carousel-track {
+.carousel .carousel-track {
   position: relative;
-  width: 100%;
-  z-index: 1;
 }
 
-.carousel-slide {
+.carousel .carousel-slide {
   display: none;
   margin: 0;
-  position: relative;
-  width: 100%;
 }
 
-.carousel-slide.is-active { display: block; }
+.carousel .carousel-slide.is-active {
+  display: block;
+  animation: carousel-fade 0.4s ease;
+}
 
-.carousel-slide picture img {
+@keyframes carousel-fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+.carousel .carousel-slide picture img {
   display: block;
   width: 100%;
-  height: auto;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
-  border-radius: 12px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--paper-2);
 }
 
-.carousel-slide figcaption {
-  margin-top: 0.75rem;
-  text-align: center;
-  font-size: 0.9rem;
-  color: rgb(0 0 0 / 70%);
+.carousel .carousel-slide figcaption {
+  min-height: 3em;
+  margin-top: var(--space-2);
+  padding-right: 6rem;
+  color: var(--ink-2);
+  font-size: var(--text-sm);
+  line-height: 1.5;
 }
 
-.carousel-btn {
+.carousel .carousel-btn {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgb(0 0 0 / 35%);
-  border: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
+  top: calc((100% - 3em - var(--space-2)) / 2);
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
-  color: #fff;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: rgb(250 248 243 / 90%);
+  color: var(--ink);
+  font-size: 1.25rem;
+  line-height: 1;
+  transform: translateY(-50%);
   cursor: pointer;
-  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.15s;
 }
 
-.carousel-btn:hover {
-  background: rgb(0 0 0 / 50%);
-  transform: translateY(-50%) scale(1.08);
+.carousel:hover .carousel-btn,
+.carousel .carousel-btn:focus-visible {
+  opacity: 1;
 }
 
-.carousel-btn:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
+.carousel .carousel-btn:hover {
+  background: var(--paper);
 }
 
-.carousel-btn.prev { left: 12px; }
-.carousel-btn.next { right: 12px; }
+.carousel .carousel-btn.prev {
+  left: 12px;
+}
 
-.carousel-dots {
+.carousel .carousel-btn.next {
+  right: 12px;
+}
+
+.carousel .carousel-dots {
   position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 0;
+  bottom: calc(3em - 1.2em);
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
-.carousel-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgb(255 255 255 / 60%);
-  border: none;
+.carousel .carousel-dot {
+  width: 14px;
+  height: 2px;
+  padding: 0;
+  border: 0;
+  background: var(--rule);
   cursor: pointer;
+  transition: width 0.2s, background 0.2s;
 }
 
-.carousel-dot.is-active {
-  background: rgb(255 255 255 / 100%);
-  transform: scale(1.2);
+.carousel .carousel-dot.is-active {
+  width: 24px;
+  background: var(--ink);
 }
 
-@media (width <= 600px) {
-  .carousel-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 1.2rem;
+@media (hover: none) {
+  .carousel .carousel-btn {
+    opacity: 1;
   }
 }
