@@ -14,4 +14,4 @@ npx -y @adobe/aem-cli up
 npm run lint
 ```
 
-Publications are listed in `publications.json`.
+This repo contains layout code only; all content (pages, publications sheet) is managed in da.live.

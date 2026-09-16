@@ -27,6 +27,8 @@ npm run lint                              # ESLint + Stylelint (runs in CI)
 | `selected-publications` | Header only; entries with `selected: true` |
 | `carousel` | One row per photo: image (set alt text) \| caption |
 
-## Publications
+## Content vs. code
 
-`publications.json` is the single source of truth, rendered by `scripts/pubs.js` (shared by both publication blocks). Entry fields: `title`, `authors`, `venue`, `details` (shown as a tag, e.g. "Oral"), `year`, `selected`, optional `teaser` (image path, e.g. `/images/teasers/focus.jpg`; falls back to a tile with the title prefix and year), and `links` with optional `doi` (Paper), `preprint` (arXiv), `pdf` (OpenReview or PDF), `webpage` (Project), `code`, `dataset`, `presentation` (Talk), `ads`, `bibtex` (opens a copyable dialog). `Eric Tillmann Bill` is bolded in author lists.
+This repo holds layout only — no site data. All content, including publications, lives in da.live.
+
+Publications come from the da.live sheet `publications` (served at `/publications.json`), rendered by `scripts/pubs.js` for both publication blocks. Columns: `title`, `authors` (wrap a name in `**…**` to bold it), `venue`, `details` (shown as a tag, e.g. "Oral"), `year`, `selected` (`true` to show on the homepage), `teaser` (image URL; otherwise a title/year tile), and link columns `doi` (Paper), `preprint` (arXiv), `pdf` (OpenReview or PDF), `webpage` (Project), `code`, `dataset`, `presentation` (Talk), `ads`, `bibtex` (opens a copyable dialog).

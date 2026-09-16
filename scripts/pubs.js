@@ -1,5 +1,3 @@
-const AUTHOR_NAME = 'Eric Tillmann Bill';
-
 const LINK_LABELS = [
   ['doi', 'Paper'],
   ['preprint', 'arXiv'],
@@ -13,10 +11,26 @@ const LINK_LABELS = [
 
 const TITLE_LINK_PRIORITY = ['webpage', 'doi', 'preprint', 'pdf'];
 
+const LINK_KEYS = [...LINK_LABELS.map(([key]) => key), 'bibtex'];
+
+function fromSheetRow(row) {
+  return {
+    title: row.title,
+    authors: row.authors,
+    venue: row.venue,
+    details: row.details,
+    year: parseInt(row.year, 10) || 0,
+    selected: /^(true|yes|x|1)$/i.test(String(row.selected).trim()),
+    teaser: row.teaser,
+    links: Object.fromEntries(LINK_KEYS.filter((key) => row[key]).map((key) => [key, row[key]])),
+  };
+}
+
 let pubsPromise;
 function fetchPublications() {
   pubsPromise = pubsPromise || fetch('/publications.json')
-    .then((resp) => (resp.ok ? resp.json() : []))
+    .then((resp) => (resp.ok ? resp.json() : { data: [] }))
+    .then((sheet) => (sheet.data || []).filter((row) => row.title).map(fromSheetRow))
     .catch(() => []);
   return pubsPromise;
 }
@@ -35,9 +49,8 @@ function el(tag, className, text) {
 
 function authorsNode(authors = '') {
   const p = el('p', 'pub-authors');
-  authors.split(AUTHOR_NAME).forEach((part, i) => {
-    if (i > 0) p.append(el('strong', '', AUTHOR_NAME));
-    p.append(part);
+  authors.split(/\*\*(.+?)\*\*/).forEach((part, i) => {
+    p.append(i % 2 ? el('strong', '', part) : part);
   });
   return p;
 }
